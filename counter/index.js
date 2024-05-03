@@ -1,14 +1,12 @@
-const fs = require('fs/promises')
-const path = require('path')
+const CounterModel = require('./models.js').Counter; // Используйте модель Counter из объекта Counter
 
-const counterPath = path.join(__dirname, 'counter.json')
+const getAll = async (req, res) => {
 
-console.log(__dirname)
-const getAll = async () => {
-    const data = await fs.readFile(counterPath)
-    return JSON.parse(data)
-}
+        const result = await CounterModel.find(); // Используйте метод find() на модели CounterModel
+        res.json(result);
+  
+};
 
 module.exports = {
-getAll,
-}
+    getAll,
+};
