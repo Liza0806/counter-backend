@@ -1,4 +1,4 @@
-const counter = require("./counter");
+const counter = require("./counter/index");
 console.log(counter.getAll);
 const express = require('express')
 const logger = require('morgan')
