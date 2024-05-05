@@ -1,16 +1,12 @@
-const mongoose = require("mongoose");
-
-const CounterModel = require("./models.js").Counter; // Используйте модель Counter из объекта Counter
+const CounterModel = require("./models.js").Counter; 
 const getAll = async (req, res) => {
-    try{
-     const result = await CounterModel.find();   
-     res.json(result); 
-    }
-    catch (error) {
-        console.error(error);
-        res.status(500).json({ message: "Internal Server Error" });
-      }
- 
+  try {
+    const result = await CounterModel.find();
+    res.json(result);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Internal Server Error" });
+  }
 };
 const updateValues = async (req, res) => {
   const { id } = req.params;
