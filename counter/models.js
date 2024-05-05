@@ -17,6 +17,7 @@ const schema = Joi.array().items(
 
 
 const counterSchema = new Schema({   
+
     currentValue: {
         type: String,
         required: false
