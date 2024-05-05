@@ -8,11 +8,7 @@ const schema = Joi.array().items(
       currentValue: Joi.string().required(),
       maxValue: Joi.string().required(),
       minValue: Joi.string().required(),
-      error: Joi.object({
-        isError: Joi.boolean().required(),
-        errorMessage: Joi.string().allow(null).optional()
-      }).required()
-    })
+      error: Joi.boolean().required()})
   );
 
 
@@ -31,7 +27,7 @@ const counterSchema = new Schema({
         required: false
     },
     error: {
-        type: Object,
+        type: Boolean,
         required: false
     }
 }, { versionKey: false, timestamps: true });
