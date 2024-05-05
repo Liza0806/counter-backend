@@ -5,9 +5,9 @@ const handleMongooseError = require('./HandleMongooseError')
 const schema = Joi.array().items(
     Joi.object({
       _id: Joi.string().required(),
-      currentValue: Joi.string().required(),
-      maxValue: Joi.string().required(),
-      minValue: Joi.string().required(),
+      currentValue: Joi.number().required(),
+      maxValue: Joi.number().required(),
+      minValue: Joi.number().required(),
       error: Joi.boolean().required()})
   );
 
@@ -15,15 +15,15 @@ const schema = Joi.array().items(
 const counterSchema = new Schema({   
 
     currentValue: {
-        type: String,
+        type: Number,
         required: false
     },
     maxValue: {
-        type: String,
+        type: Number,
         required: false
     },
     minValue: {
-        type: String,
+        type: Number,
         required: false
     },
     error: {
